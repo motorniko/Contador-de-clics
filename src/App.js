@@ -3,17 +3,24 @@ import { click } from '@testing-library/user-event/dist/click';
 import './App.css';
 import Boton from './componentes/Boton';
 import osirislogo from './imagenes/osiris.png';
+import Contador from './componentes/contador';
+import { useState } from 'react';
+
+
+
 
 function App() {
 
+  const [numClics, setNunClics,] = useState(0);
+
   const menejarClic= () => {
-    console.log("clic");
-  }
+    setNunClics(numClics + 1);
+  };
 
-  const reiniciar = () => {
-    console.log("reiniciar");
+  const reiniciarContador = () => {
+    setNunClics(0);
 
-  }
+  };
 
 
 
@@ -27,16 +34,18 @@ function App() {
         />
       </div>
       <div className='cont-principal'>
+
+        <Contador numClics={numClics} />
         <Boton 
           texto='clic'
           esBotonDeclic={true}
-          menejarClic={}
+          menejarClic={menejarClic}
         />
         
         <Boton 
           texto='reiniciar'
           esBotonDeclic={false}
-          menejarClic={}
+          menejarClic={reiniciarContador}
           />
 
       </div>

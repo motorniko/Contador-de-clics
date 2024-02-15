@@ -30,6 +30,16 @@ body{
 }
 
 .logo {
-    height: 50px;
+    height: 200px;
     
+}
+
+.cont-principal {
+    height: 550pv;
+    min-width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
